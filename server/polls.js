@@ -1,39 +1,37 @@
-const clone = require('clone')
+const clone = require("clone");
 //const config = require('./config')
 
-const db = {}
+const db = {};
 
 const defaultData = {
   polls: [
     {
-      _id: '',
+      _id: "",
       options: {},
-      Question: ''
-    }
-  ]
-}
+      Question: "",
+    },
+  ],
+};
 
 const get = (token) => {
-  let data = db[token]
+  let data = db[token];
 
   if (data == null) {
-    data = db[token] = clone(defaultData)
+    data = db[token] = clone(defaultData);
   }
 
-  return data
-}
+  return data;
+};
 
 const add = (token, poll) => {
   if (!poll.id) {
-    poll.id = Math.random().toString(36).substr(-8)
+    poll.id = Math.random().toString(36).substr(-8);
   }
-
-  get(token).polls.push(poll)
-
-  return poll
-}
+  get(token).polls.push(poll);
+  return poll;
+};
 
 module.exports = {
   get,
-  add
-}
+  add,
+};
