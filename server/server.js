@@ -1,15 +1,10 @@
 const express = require('express');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 const config = require('./config');
-const path = require('path');
 const cors = require('cors');
 const polls = require('./polls');
 
 const app = express();
-
-// app.set('view engine', 'html');
-// app.set('views', path.join(__dirname, '../src'));
-// app.use(express.static(path.join(__dirname, '../src')));
 
 app.use(express.static('public'))
 app.use(cors())

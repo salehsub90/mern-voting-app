@@ -4,7 +4,13 @@ const clone = require('clone')
 const db = {}
 
 const defaultData = {
-  polls: []
+  polls: [
+    {
+      _id: '',
+      options: {},
+      Question: ''
+    }
+  ]
 }
 
 const get = (token) => {
@@ -22,7 +28,7 @@ const add = (token, poll) => {
     poll.id = Math.random().toString(36).substr(-8)
   }
 
-  get(token).contacts.push(poll)
+  get(token).polls.push(poll)
 
   return poll
 }
