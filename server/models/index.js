@@ -5,3 +5,4 @@ mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost/vote", { useNewUrlParser: true });
 
 module.exports.Poll = require("./poll");
+module.exports.User = require("./user");

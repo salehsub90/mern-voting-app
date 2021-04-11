@@ -18,7 +18,7 @@ exports.createPoll = async (req, res, next) => {
       question,
       options: options.map((option) => ({ option, votes: 0 })),
     });
-    res.status(200).json(poll);
+    res.status(201).json(poll);
   } catch (err) {
     err.status = 400;
     next(err);

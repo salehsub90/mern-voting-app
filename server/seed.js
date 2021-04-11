@@ -27,14 +27,14 @@ const seed = async () => {
     await db.Poll.remove();
     console.log("removed all polls");
 
-    await Promise.all(
-      polls.map(async (poll) => {
-        poll.options = poll.options.map((options) => ({ options, votes: 0 }));
-        const data = await db.Poll.create(poll);
-        await data.save();
-      })
-    );
-    console.log("Polls created!!");
+    // await Promise.all(
+    //   polls.map(async (poll) => {
+    //     poll.options = poll.options.map((options) => ({ options, votes: 0 }));
+    //     const data = await db.Poll.create(poll);
+    //     await data.save();
+    //   })
+    // );
+    // console.log("Polls created!!");
   } catch (err) {
     console.log(err);
   }
