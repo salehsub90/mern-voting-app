@@ -8,7 +8,7 @@ exports.register = async (req, res, next) => {
 
     const token = jwt.sign({ id, username }, process.env.SECRET);
 
-    res.status(201).res.json({ id, username, token });
+    res.status(201).json({ id, username, token });
   } catch (err) {
     if (err.code === 11000) {
       err.message = "Sorry, this username already exists!";
